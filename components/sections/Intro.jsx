@@ -19,7 +19,7 @@ export function Hero() {
     <section className="hero" id="top" data-theme="dark">
       <div className="hero__media">
         <div className="hero__parallax">
-          <Art name="hero" className="hero__art" fit="cover" position="50% 40%" sizes="100vw" priority />
+          <Art name="hero" className="hero__art" fit="cover" position="50% 0%" sizes="100vw" priority />
         </div>
         <div className="hero__shade" />
       </div>

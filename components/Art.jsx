@@ -9,7 +9,7 @@ import { IMAGES } from '@/lib/images';
  * If the file isn't in /public/images yet, shows a storyboard-style placeholder
  * with the expected filename instead of a broken image.
  */
-export default function Art({ name, className = '', fit = 'contain', position = '50% 100%', sizes = '50vw', priority = false }) {
+export default function Art({ name, className = '', fit = 'contain', position = '50% 100%', sizes = '50vw', priority = false, eager = false }) {
   const img = IMAGES[name];
   const [missing, setMissing] = useState(false);
 
@@ -23,6 +23,7 @@ export default function Art({ name, className = '', fit = 'contain', position = 
             fill
             sizes={sizes}
             priority={priority}
+            loading={priority ? undefined : eager ? 'eager' : 'lazy'}
             style={{ objectFit: fit, objectPosition: position }}
             onError={() => setMissing(true)}
           />

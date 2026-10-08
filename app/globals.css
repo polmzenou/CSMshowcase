@@ -514,7 +514,8 @@ ul {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to top, rgba(11, 11, 11, 0.85) 0%, rgba(11, 11, 11, 0) 45%),
+    linear-gradient(to top, rgba(11, 11, 11, 0.92) 0%, rgba(11, 11, 11, 0.55) 30%, rgba(11, 11, 11, 0) 60%),
+    linear-gradient(to right, rgba(11, 11, 11, 0.8) 0%, rgba(11, 11, 11, 0.35) 38%, rgba(11, 11, 11, 0) 60%),
     linear-gradient(to bottom, rgba(11, 11, 11, 0.6) 0%, rgba(11, 11, 11, 0) 22%),
     radial-gradient(ellipse at center, transparent 50%, rgba(11, 11, 11, 0.6) 100%);
 }
@@ -676,8 +677,8 @@ ul {
 .scene__art--hit {
   right: 6vw;
   bottom: 0;
-  height: 92svh;
-  aspect-ratio: 4 / 5;
+  height: 94svh;
+  aspect-ratio: 2 / 3;
   z-index: 1;
 }
 .hit__splat {
@@ -687,13 +688,13 @@ ul {
   width: min(62vw, 760px);
   aspect-ratio: 1;
   background:
-    radial-gradient(circle at 50% 50%, var(--ink) 0 30%, transparent 30.5%),
-    radial-gradient(circle at 18% 30%, var(--ink) 0 7%, transparent 7.5%),
-    radial-gradient(circle at 80% 22%, var(--ink) 0 5%, transparent 5.5%),
-    radial-gradient(circle at 86% 74%, var(--ink) 0 8%, transparent 8.5%),
-    radial-gradient(circle at 26% 82%, var(--ink) 0 4%, transparent 4.5%),
-    radial-gradient(circle at 8% 60%, var(--ink) 0 2.5%, transparent 3%),
-    radial-gradient(circle at 64% 6%, var(--ink) 0 2%, transparent 2.5%);
+    radial-gradient(circle at 50% 50%, var(--red-dark) 0 30%, transparent 30.5%),
+    radial-gradient(circle at 18% 30%, var(--red-dark) 0 7%, transparent 7.5%),
+    radial-gradient(circle at 80% 22%, var(--red-dark) 0 5%, transparent 5.5%),
+    radial-gradient(circle at 86% 74%, var(--red-dark) 0 8%, transparent 8.5%),
+    radial-gradient(circle at 26% 82%, var(--red-dark) 0 4%, transparent 4.5%),
+    radial-gradient(circle at 8% 60%, var(--red-dark) 0 2.5%, transparent 3%),
+    radial-gradient(circle at 64% 6%, var(--red-dark) 0 2%, transparent 2.5%);
   opacity: 0.92;
 }
 .scene__text--hit {
@@ -755,7 +756,6 @@ ul {
 }
 .shard__img {
   background:
-    url('/images/cut.jpg') center / cover no-repeat,
     radial-gradient(circle at 55% 45%, rgba(11, 11, 11, 0) 0 18%, rgba(11, 11, 11, 0.35) 60%),
     linear-gradient(118deg, var(--red) 0 46%, var(--paper) 46% 47.2%, var(--red-dark) 47.2% 58%, var(--ink) 58%);
 }
@@ -780,12 +780,12 @@ ul {
 .shatter__slash {
   position: absolute;
   left: -10%;
-  top: 50%;
-  width: 120%;
+  top: 22%;
+  width: 130%;
   height: 4px;
   background: var(--paper);
   box-shadow: 0 0 30px rgba(239, 234, 226, 0.9);
-  transform: rotate(-14deg) scaleX(0);
+  transform: rotate(24deg) scaleX(0);
   transform-origin: 0 50%;
 }
 .shatter__shade {
@@ -1305,9 +1305,7 @@ ul {
     display: none;
   }
   .hero__count {
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    display: none;
   }
   .scene__art--fall {
     left: 0;

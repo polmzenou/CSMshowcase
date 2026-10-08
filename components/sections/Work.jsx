@@ -22,7 +22,8 @@ export function Cut() {
         <div className="shatter__shards">
           {SHARDS.map((s, i) => (
             <div key={i} className="shard" style={{ clipPath: s.clip }} data-dx={s.dx} data-dy={s.dy}>
-              <div className="shard__img" />
+              {/* same image in every shard: one download, and the pieces line up into one panel */}
+              <Art name="cut" className="shard__img" fit="cover" position="50% 50%" sizes="100vw" eager />
             </div>
           ))}
         </div>
@@ -54,7 +55,7 @@ export function Cut() {
 const SERVICES = [
   { art: 'denji', label: 'Series', title: 'Original series & shorts', desc: 'Episodic stories built from scratch — pilots, shorts, full seasons.' },
   { art: 'power', label: 'Music', title: 'Music videos', desc: 'Animated visuals that hit as hard as the drop.' },
-  { art: 'aki', label: 'Brand', title: 'Brand & commercial', desc: 'Anime-grade spots for brands that want to be remembered.' },
+  { art: 'aki', label: 'Brand', title: 'Brand & commercial', desc: 'Anime-grade spots for brands that want to be remembered.', fit: 'cover', position: '45% 50%' },
   { art: 'pochita', label: 'Titles', title: 'Titles & trailers', desc: 'Opening sequences, key visuals and trailers that sell the world.' },
 ];
 
@@ -87,7 +88,7 @@ export function Services() {
       <div className="svc-preview" aria-hidden="true">
         {SERVICES.map((s, i) => (
           <div className="svc-preview__item" key={s.art} data-index={i}>
-            <Art name={s.art} sizes="280px" />
+            <Art name={s.art} fit={s.fit} position={s.position} sizes="280px" />
             <span className="svc-preview__label mono">
               {String(i + 1).padStart(2, '0')} — {s.label}
             </span>
@@ -100,10 +101,10 @@ export function Services() {
 
 const CARDS = [
   { mod: 'a', art: 'denji', asset: 'Asset 01', project: 'Project: Freefall', title: 'Chainsaw', meta: 'Pilot short — 2026', sizes: '(max-width: 768px) 100vw, 50vw' },
-  { mod: 'b', art: 'power', asset: 'Asset 02', project: 'Project: Blood', title: 'Blood fiend', meta: 'Music video — 2025', fit: 'contain', sizes: '(max-width: 768px) 100vw, 50vw' },
+  { mod: 'b card--ink', art: 'aki', asset: 'Asset 02', project: 'Project: Fox', title: 'One cut', meta: 'Title sequence — 2025', position: '70% 100%', sizes: '(max-width: 768px) 100vw, 50vw' },
   { mod: 'c card--orange', art: 'pochita', asset: 'Asset 03', project: 'Woof', title: 'Pochi', meta: 'Mascot — 2026', sizes: '(max-width: 768px) 100vw, 25vw' },
-  { mod: 'd card--paper', art: 'aki', asset: 'Asset 04', project: 'Project: Fox', title: 'One cut', meta: 'Title sequence — 2025', sizes: '(max-width: 768px) 100vw, 25vw' },
-  { mod: 'e card--ink', art: 'makima', asset: 'Asset 05', project: 'Project: Control', title: 'Obey the frame', meta: 'Brand film — 2026', fit: 'cover', position: '50% 32%', sizes: '100vw' },
+  { mod: 'd card--paper', art: 'power', asset: 'Asset 04', project: 'Project: Blood', title: 'Blood fiend', meta: 'Music video — 2025', sizes: '(max-width: 768px) 100vw, 25vw' },
+  { mod: 'e card--ink', art: 'makima', asset: 'Asset 05', project: 'Project: Control', title: 'Obey the frame', meta: 'Brand film — 2026', fit: 'cover', position: '50% 22%', sizes: '100vw' },
 ];
 
 export function Frames() {
